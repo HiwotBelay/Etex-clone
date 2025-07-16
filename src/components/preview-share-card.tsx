@@ -35,13 +35,119 @@ Facebook: @etex
         <h2 className="text-text-accent text-xl font-bold mb-4">
           PLEASE COPY THE TEXT BELOW AND SHARE IT ON SOCIAL MEDIA
         </h2>
-        <div className="bg-card-dark p-6 rounded-xl border border-border-accent shadow-lg relative">
-          <pre className="text-foreground text-sm whitespace-pre-wrap text-left mb-4">
-            {socialMediaText}
-          </pre>
+        <div
+          className="relative"
+          style={{
+            background: "#181A20",
+            borderRadius: 24,
+            padding: "32px 32px 56px 32px",
+            fontFamily: "Inter, Montserrat, Arial, sans-serif",
+            color: "#fff",
+            textAlign: "left",
+            minHeight: 340,
+            margin: "0 auto",
+            maxWidth: 700,
+          }}
+        >
+          <div
+            style={{
+              fontSize: 20,
+              fontWeight: 600,
+              marginBottom: 24,
+              color: "#fff",
+              fontFamily: "inherit",
+            }}
+          >
+            I’ll be attending{" "}
+            <span style={{ fontWeight: 700 }}>
+              ETEX 2025 – East Africa's Largest Tech Event.
+            </span>
+          </div>
+          <div
+            style={{
+              fontSize: 18,
+              marginBottom: 24,
+              color: "#fff",
+              fontFamily: "inherit",
+            }}
+          >
+            Join me in Addis Ababa from{" "}
+            <span style={{ fontWeight: 700 }}>May 16–18 at the AICC</span> to
+            explore advancements in{" "}
+            <span style={{ fontWeight: 700 }}>
+              AI, Cybersecurity, Fintech, and Digital Transformation
+            </span>{" "}
+            across the region.
+          </div>
+          <div
+            style={{
+              fontSize: 17,
+              marginBottom: 24,
+              color: "#fff",
+              fontFamily: "inherit",
+            }}
+          >
+            Visit the official website: www.etexethiopia.com
+          </div>
+          <div
+            style={{
+              fontWeight: 700,
+              marginBottom: 12,
+              color: "#fff",
+              fontSize: 17,
+              fontFamily: "inherit",
+            }}
+          >
+            For more updates follow the below:
+          </div>
+          <div
+            style={{
+              fontSize: 17,
+              marginBottom: 24,
+              color: "#fff",
+              fontFamily: "inherit",
+            }}
+          >
+            LinkedIn: @etex2025
+            <br />
+            Twitter: @etex_ethiopia
+            <br />
+            Facebook: @etex
+          </div>
+          <div
+            style={{
+              fontWeight: 700,
+              color: "#fff",
+              fontSize: 18,
+              fontFamily: "inherit",
+              marginTop: 24,
+            }}
+          >
+            #ETEX #ETEX2025 #DigitalEthiopia #TechForAfrica #Innovation
+            #EthiopiaTech #DigitalTransformation
+          </div>
           <button
-            className="absolute bottom-4 right-4 px-4 py-2 border text-sm rounded bg-background-dark text-foreground border-border-accent hover:bg-background-dark/80 transition"
-            onClick={() => navigator.clipboard.writeText(socialMediaText)}
+            style={{
+              position: "absolute",
+              right: 24,
+              bottom: 16,
+              padding: "8px 24px",
+              background: "#101B3A",
+              color: "#fff",
+              border: "none",
+              borderRadius: 8,
+              fontSize: 16,
+              fontWeight: 500,
+              cursor: "pointer",
+              fontFamily: "inherit",
+              boxShadow: "0 2px 8px 0 #0003",
+              transition: "background 0.2s, color 0.2s",
+            }}
+            onClick={() =>
+              navigator.clipboard.writeText(
+                `I’ll be attending ETEX 2025 – East Africa's Largest Tech Event.\n\nJoin me in Addis Ababa from May 16–18 at the AICC to explore advancements in AI, Cybersecurity, Fintech, and Digital Transformation across the region.\n\nVisit the official website: www.etexethiopia.com\n\nFor more updates follow the below:\nLinkedIn: @etex2025\nTwitter: @etex_ethiopia\nFacebook: @etex\n\n#ETEX #ETEX2025 #DigitalEthiopia #TechForAfrica #Innovation #EthiopiaTech #DigitalTransformation`
+              )
+            }
           >
             Copy
           </button>
