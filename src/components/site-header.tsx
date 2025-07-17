@@ -14,7 +14,7 @@ export function SiteHeader() {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setHeaderClass("bg-black/80 backdrop-blur-sm") // Transparent black on scroll
+        setHeaderClass("bg-white/10 backdrop-blur-sm") // White transparent on scroll
       } else {
         setHeaderClass("bg-black") // Pure black at top
       }
@@ -28,9 +28,9 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`w-full text-foreground py-4 px-6 border-b border-border-accent fixed top-0 z-50 transition-all duration-300 h-[120px] flex items-center ${headerClass}`}
+      className={`w-full text-foreground py-4 pl-5 pr-6 border-b border-border-accent fixed top-0 z-50 transition-all duration-300 h-[120px] flex items-center ${headerClass}`}
     >
-      <div className="flex items-center justify-between max-w-7xl mx-auto w-full h-full">
+      <div className="flex items-center justify-between w-full h-full">
         {/* Left Section: Single Combined Image */}
         <div className="flex items-center h-full">
           <img

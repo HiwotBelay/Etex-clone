@@ -6,6 +6,7 @@ import { ActionButtonsFooter } from "./components/action-buttons-footer";
 import { PhoneIcon as Whatsapp } from "lucide-react";
 
 
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
@@ -32,30 +33,20 @@ export default function Home() {
       <footer className="bg-[#3A3A3A] pt-0 pb-0 px-0 text-center text-white text-base font-medium w-full">
         <div className="w-full flex flex-col items-center bg-[#3A3A3A] pt-2 pb-4 border-t border-[#444] mt-0">
           <div className="flex justify-center items-center">
-            <a
-              href="#"
-              className="text-white underline hover:text-[#00FFF0] transition-colors mx-2"
-            >
+            <a href="#" className="text-white underline hover:text-[#00FFF0] transition-colors mx-2">
               Terms and Conditions
             </a>
             <span className="text-white mx-1">|</span>
-            <a
-              href="#"
-              className="text-white underline hover:text-[#00FFF0] transition-colors mx-2"
-            >
+            <a href="#" className="text-white underline hover:text-[#00FFF0] transition-colors mx-2">
               Cookie Policy
             </a>
             <span className="text-white mx-1">|</span>
-            <a
-              href="#"
-              className="text-white underline hover:text-[#00FFF0] transition-colors mx-2"
-            >
+            <a href="#" className="text-white underline hover:text-[#00FFF0] transition-colors mx-2">
               Privacy Policy
             </a>
           </div>
           <p className="text-white text-base font-medium pt-2">
-            Copyright © 2025 QNA Group. All rights reserved. Head Office: 1705,
-            GBT Tower, Barsha Heights (Tecom).
+            Copyright © 2025 QNA Group. All rights reserved. Head Office: 1705, GBT Tower, Barsha Heights (Tecom).
           </p>
         </div>
       </footer>

@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
+import image1 from "../assets/GENERATE.png" // Corrected import path based on your input
 
 export function UploadDetailsCard() {
   const [selectedFileName, setSelectedFileName] = useState<string>("")
@@ -33,11 +33,11 @@ export function UploadDetailsCard() {
 
   return (
     <div
-      className="bg-background-card p-8 rounded-xl border border-border-dark-grey shadow-lg"
-      style={{ width: "484px", height: "1217px" }}
+      className="p-0 rounded-xl border border-border-dark-grey shadow-lg flex flex-col items-center justify-start"
+      style={{ width: "484px", height: "1217px", backgroundColor: "#066475" }} // Applied background color directly
     >
-      <h2 className="text-foreground text-xl font-bold mb-6 text-center">PLEASE UPLOAD IMAGE AND DETAILS</h2>
-      <div className="border border-white rounded mx-auto p-4" style={{ width: "449px", height: "760px" }}>
+      <div className="border border-white rounded mx-auto p-4 mt-4" style={{ width: "449px", height: "760px" }}>
+        <h2 className="text-foreground text-xl font-bold mb-6 text-center">PLEASE UPLOAD IMAGE AND DETAILS</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <p className="text-foreground text-sm mb-2">Upload JPG & PNG Format Image (Max size: 3MB)</p>
@@ -81,7 +81,7 @@ export function UploadDetailsCard() {
           </div>
           <button type="submit" className="w-full flex justify-center">
             <img
-              src="/placeholder.svg?height=59&width=180"
+              src={image1|| "/placeholder.svg"} // Corrected usage: use the imported image variable
               alt="Generate Button"
               width={180}
               height={59}
@@ -89,19 +89,20 @@ export function UploadDetailsCard() {
             />
           </button>
         </form>
-      </div>
-      <div className="mt-10 text-center">
-        <h3 className="text-text-cyan text-lg font-bold mb-4">Share Your ETEX 2025 Badge</h3>
-        <p className="text-foreground text-sm mb-4">
-          Once your badge is ready, you are encouraged to post it on LinkedIn, Twitter, or Facebook using the suggested
-          caption in this window:
-        </p>
-        <p className="text-text-cyan text-sm font-bold mb-4">Please tag the official pages when sharing:</p>
-        <ul className="text-foreground text-sm list-disc list-inside space-y-1 text-left inline-block">
-          <li>LinkedIn: @etex2025</li>
-          <li>Twitter: @etex_ethiopia</li>
-          <li>Facebook: @etex</li>
-        </ul>
+        <div className="mt-10 text-center">
+          <h3 className="text-text-cyan text-lg font-bold mb-4">Share Your ETEX 2025 Badge</h3>
+          <p className="text-foreground text-sm mb-4">
+            {
+              "Once your badge is ready, you are encouraged to post it on LinkedIn, Twitter, or Facebook using the suggested caption in this window:"
+            }
+          </p>
+          <p className="text-text-cyan text-sm font-bold mb-4">Please tag the official pages when sharing:</p>
+          <ul className="text-foreground text-sm list-disc list-inside space-y-1 text-left inline-block">
+            <li>LinkedIn: @etex2025</li>
+            <li>Twitter: @etex_ethiopia</li>
+            <li>Facebook: @etex</li>
+          </ul>
+        </div>
       </div>
     </div>
   )
