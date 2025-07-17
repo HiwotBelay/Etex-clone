@@ -7,10 +7,20 @@ export function ActionButtonsFooter() {
   const stroke = 2;
 
   const buttons = [
-    { label: "REGISTER NOW", width: btnWidth, height: btnHeight },
-    { label: "EXHIBIT NOW", width: btnWidth, height: btnHeight },
-    { label: "HACKATHON", width: btnWidth, height: btnHeight },
-    { label: "WORKSHOP", width: btnWidth, height: btnHeight },
+    {
+      label: "REGISTER NOW",
+      width: btnWidth,
+      height: btnHeight,
+      animDuration: 4,
+    },
+    {
+      label: "EXHIBIT NOW",
+      width: btnWidth,
+      height: btnHeight,
+      animDuration: 5,
+    },
+    { label: "HACKATHON", width: btnWidth, height: btnHeight, animDuration: 6 },
+    { label: "WORKSHOP", width: btnWidth, height: btnHeight, animDuration: 7 },
   ];
 
   const getDashArray = (w: number, h: number, r: number) =>
@@ -24,6 +34,7 @@ export function ActionButtonsFooter() {
         const gradId = `snake-gradient-anim-${i}`;
         const dashArray = getDashArray(btn.width, btn.height, radius);
         const sizeClass = "w-[160px] h-[52px]";
+        const animDuration = btn.animDuration;
 
         return (
           <div
@@ -58,7 +69,7 @@ export function ActionButtonsFooter() {
                   rx={radius}
                   ry={radius}
                   style={{
-                    animation: `snake-move-anim 2s linear infinite`,
+                    animation: `snake-move-anim ${animDuration}s linear infinite`,
                     animationDirection: direction,
                     animationDelay: delay,
                     stroke: `url(#${gradId})`,
