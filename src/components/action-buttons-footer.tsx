@@ -7,8 +7,8 @@ export function ActionButtonsFooter() {
   const stroke = 2;
 
   const buttons = [
-    { label: "REGISTER\nNOW", width: btnWidth, height: btnHeight },
-    { label: "EXHIBIT\nNOW", width: btnWidth, height: btnHeight },
+    { label: "REGISTER NOW", width: btnWidth, height: btnHeight },
+    { label: "EXHIBIT NOW", width: btnWidth, height: btnHeight },
     { label: "HACKATHON", width: btnWidth, height: btnHeight },
     { label: "WORKSHOP", width: btnWidth, height: btnHeight },
   ];
@@ -35,7 +35,9 @@ export function ActionButtonsFooter() {
               className={`flex items-center justify-center font-orbitron font-semibold uppercase rounded-xl border border-[#00FFF0] shadow-[0_2px_12px_0_#00fff033] tracking-wide text-[1.08rem] text-white bg-[#0b1030] text-center whitespace-pre-line transition-colors duration-200 hover:bg-[#00FFF0] hover:text-[#0b1030] px-2 ${sizeClass}`}
               style={{ borderRadius: radius }}
             >
-              <span className="w-full whitespace-pre-line leading-tight">{btn.label}</span>
+              <span className="w-full whitespace-pre-line leading-tight">
+                {btn.label}
+              </span>
               <svg
                 className="absolute top-0 left-0 w-full h-full pointer-events-none z-10"
                 viewBox={`0 0 ${btn.width} ${btn.height}`}
