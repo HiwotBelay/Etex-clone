@@ -33,10 +33,10 @@ export function ActionButtonsFooter() {
     <>
       <style>{`
         .action-btns-container {
-          background: radial-gradient(ellipse at 60% 40%, #232a3e 60%, #232a3e 100%);
+            background: radial-gradient(ellipse at 60% 40%, #ffffff33 0%, #7d888eff 80%);
           border-radius: 32px;
           box-shadow: 0 0 60px 0 #00fff033, 0 0 0 2px #232a3e;
-          padding: 24px 32px;
+          padding: 8px 8px;
           display: flex;
           justify-content: center;
           align-items: center;
