@@ -24,15 +24,40 @@ export default function Home() {
           <PreviewShareCard />
         </section>
       </main>
-      <footer className="bg-background-dark py-8 px-4 text-center text-foreground text-sm">
+      {/* Action Buttons Section - now separate from footer */}
+      <section className="mb-8">
         <ActionButtonsFooter />
-        <p className="mt-8">
-          Copyright © 2025 QNA Group. All rights reserved. Head Office: 1705, GBT Tower, Barsha Heights (Tecom).
-        </p>
-        <p className="mt-2 text-muted-foreground">
-          Could not connect to the reCAPTCHA service. Please check your internet connection and reload to get a
-          reCAPTCHA challenge.
-        </p>
+      </section>
+      {/* Footer with only copyright/terms */}
+      <footer className="bg-[#3A3A3A] pt-0 pb-0 px-0 text-center text-white text-base font-medium w-full">
+        <div className="w-full flex flex-col items-center bg-[#3A3A3A] pt-2 pb-4 border-t border-[#444] mt-0">
+          <div className="flex justify-center items-center">
+            <a
+              href="#"
+              className="text-white underline hover:text-[#00FFF0] transition-colors mx-2"
+            >
+              Terms and Conditions
+            </a>
+            <span className="text-white mx-1">|</span>
+            <a
+              href="#"
+              className="text-white underline hover:text-[#00FFF0] transition-colors mx-2"
+            >
+              Cookie Policy
+            </a>
+            <span className="text-white mx-1">|</span>
+            <a
+              href="#"
+              className="text-white underline hover:text-[#00FFF0] transition-colors mx-2"
+            >
+              Privacy Policy
+            </a>
+          </div>
+          <p className="text-white text-base font-medium pt-2">
+            Copyright © 2025 QNA Group. All rights reserved. Head Office: 1705,
+            GBT Tower, Barsha Heights (Tecom).
+          </p>
+        </div>
       </footer>
       {/* WhatsApp Chat Button */}
       <a
