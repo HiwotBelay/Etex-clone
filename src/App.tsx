@@ -14,13 +14,14 @@ export default function App() {
     >
       {/* Added pt-20 for fixed header */}
       <SiteHeader />
-      <main className="container mx-auto py-12 px-4 md:px-6 lg:grid lg:grid-cols-2 lg:gap-12">
-        <section className="mb-12 lg:mb-0">
+      <main className="container mx-auto py-12 px-4 md:px-6 lg:grid lg:grid-cols-12 lg:gap-12">
+        <section className="mb-12 lg:mb-0 lg:col-span-5">
           <UploadDetailsCard />
         </section>
-
-        <section>
-          <PreviewShareCard />
+        <section className="lg:col-span-7 flex justify-center">
+          <div className="w-full max-w-3xl">
+            <PreviewShareCard />
+          </div>
         </section>
       </main>
       {/* Action Buttons Section - now separate from footer */}
