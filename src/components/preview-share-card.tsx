@@ -66,30 +66,30 @@ export function PreviewShareCard() {
         </div>
       </div>
 
-      <div className="text-center mt-4">
-        <h2 className="text-white text-2xl font-extrabold mb-8 tracking-wide font-sans">
+      <div className="text-center mt-2">
+        <h2 className="text-white text-lg font-extrabold mb-4 tracking-wide font-sans">
           DOWNLOAD & SHARE YOUR BADGE
         </h2>
-        <div className="flex justify-center gap-8">
+        <div className="flex justify-center gap-4">
           {/* Download Button */}
-          <button className="w-16 h-16 flex items-center justify-center rounded-full border-2 border-dotted border-[#00FFF0] bg-[#0B1230] text-white shadow-[0_0_0_2px_#00FFF0,0_0_12px_2px_#00FFF0] hover:scale-110 transition-all duration-200">
-            <Download className="w-7 h-7" />
+          <button className="w-12 h-12 flex items-center justify-center rounded-full border border-white bg-transparent text-white hover:bg-transparent hover:text-white transition-transform duration-200 hover:scale-90">
+            <Download className="w-5 h-5 text-white" />
           </button>
           {/* LinkedIn Button */}
-          <button className="w-16 h-16 flex items-center justify-center rounded-full border-2 border-dotted border-[#00FFF0] bg-[#0B1230] text-white shadow-[0_0_0_2px_#00FFF0,0_0_12px_2px_#00FFF0] hover:scale-110 transition-all duration-200">
-            <Linkedin className="w-7 h-7" />
+          <button className="w-12 h-12 flex items-center justify-center rounded-full border border-white bg-transparent text-white hover:bg-transparent hover:text-white transition-transform duration-200 hover:scale-90">
+            <Linkedin className="w-5 h-5 text-white" />
           </button>
           {/* X Button */}
-          <button className="w-16 h-16 flex items-center justify-center rounded-full border-2 border-dotted border-[#00FFF0] bg-[#0B1230] text-white shadow-[0_0_0_2px_#00FFF0,0_0_12px_2px_#00FFF0] hover:scale-110 transition-all duration-200">
-            <X className="w-7 h-7" />
+          <button className="w-12 h-12 flex items-center justify-center rounded-full border border-white bg-transparent text-white hover:bg-transparent hover:text-white transition-transform duration-200 hover:scale-90">
+            <X className="w-5 h-5 text-white" />
           </button>
           {/* Facebook Button */}
-          <button className="w-16 h-16 flex items-center justify-center rounded-full border-2 border-dotted border-[#00FFF0] bg-[#0B1230] text-white shadow-[0_0_0_2px_#00FFF0,0_0_12px_2px_#00FFF0] hover:scale-110 transition-all duration-200">
-            <Facebook className="w-7 h-7" />
+          <button className="w-12 h-12 flex items-center justify-center rounded-full border border-white bg-transparent text-white hover:bg-transparent hover:text-white transition-transform duration-200 hover:scale-90">
+            <Facebook className="w-5 h-5 text-white" />
           </button>
           {/* Instagram Button */}
-          <button className="w-16 h-16 flex items-center justify-center rounded-full border-2 border-dotted border-[#00FFF0] bg-[#0B1230] text-white shadow-[0_0_0_2px_#00FFF0,0_0_12px_2px_#00FFF0] hover:scale-110 transition-all duration-200">
-            <Instagram className="w-7 h-7" />
+          <button className="w-12 h-12 flex items-center justify-center rounded-full border border-white bg-transparent text-white hover:bg-transparent hover:text-white transition-transform duration-200 hover:scale-90">
+            <Instagram className="w-5 h-5 text-white" />
           </button>
         </div>
       </div>
