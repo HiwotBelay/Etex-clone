@@ -27,7 +27,7 @@ export function ActionButtonsFooter() {
     2 * (w + h - 2 * r) + 2 * Math.PI * r;
 
   return (
-    <div className="w-full max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-5 rounded-2xl p-3 bg-[rgba(240,245,255,0.2)] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,240,0.10)] backdrop-blur-md">
+    <div className="sticky top-0 z-40 w-full max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-5 rounded-2xl p-3 bg-[rgba(240,245,255,0.2)] border border-cyan-400/30 shadow-lg backdrop-blur-md">
       {buttons.map((btn, i) => {
         const direction = i % 2 === 0 ? "reverse" : "normal";
         const delay = `${i * 0.2}s`;
