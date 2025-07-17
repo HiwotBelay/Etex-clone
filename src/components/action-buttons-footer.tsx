@@ -1,34 +1,29 @@
 import { Link } from "react-router-dom";
 
 export function ActionButtonsFooter() {
-  const largeWidth = 200; // slightly increased width
-  const largeHeight = 64; // slightly increased height
-  const smallWidth = 160;
-  const smallHeight = 52;
-  const radius = 18; // slightly larger radius
+  const btnWidth = 160;
+  const btnHeight = 52;
+  const radius = 18;
   const stroke = 2;
 
   const buttons = [
-    { label: "REGISTER\nNOW", width: largeWidth, height: largeHeight },
-    { label: "EXHIBIT\nNOW", width: largeWidth, height: largeHeight },
-    { label: "HACKATHON", width: smallWidth, height: smallHeight },
-    { label: "WORKSHOP", width: smallWidth, height: smallHeight },
+    { label: "REGISTER\nNOW", width: btnWidth, height: btnHeight },
+    { label: "EXHIBIT\nNOW", width: btnWidth, height: btnHeight },
+    { label: "HACKATHON", width: btnWidth, height: btnHeight },
+    { label: "WORKSHOP", width: btnWidth, height: btnHeight },
   ];
 
   const getDashArray = (w: number, h: number, r: number) =>
     2 * (w + h - 2 * r) + 2 * Math.PI * r;
 
   return (
-    <div className="w-full max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-5 rounded-2xl p-3 bg-[rgba(240,245,255,0.2)] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,240,0.10)] backdrop-blur-md">
+    <div className="w-full max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-5 rounded-2xl p-3 bg-[rgba(240,245,255,0.2)] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,240,0.10)] backdrop-blur-md">
       {buttons.map((btn, i) => {
         const direction = i % 2 === 0 ? "reverse" : "normal";
         const delay = `${i * 0.2}s`;
         const gradId = `snake-gradient-anim-${i}`;
         const dashArray = getDashArray(btn.width, btn.height, radius);
-        const sizeClass =
-          btn.width === largeWidth
-            ? "lg:w-[200px] lg:h-[64px] w-[160px] h-[52px]"
-            : "w-[160px] h-[52px]";
+        const sizeClass = "w-[160px] h-[52px]";
 
         return (
           <div
@@ -40,9 +35,7 @@ export function ActionButtonsFooter() {
               className={`flex items-center justify-center font-orbitron font-semibold uppercase rounded-xl border border-[#00FFF0] shadow-[0_2px_12px_0_#00fff033] tracking-wide text-[1.08rem] text-white bg-[#0b1030] text-center whitespace-pre-line transition-colors duration-200 hover:bg-[#00FFF0] hover:text-[#0b1030] px-2 ${sizeClass}`}
               style={{ borderRadius: radius }}
             >
-              <span className="w-full whitespace-pre-line leading-tight">
-                {btn.label}
-              </span>
+              <span className="w-full whitespace-pre-line leading-tight">{btn.label}</span>
               <svg
                 className="absolute top-0 left-0 w-full h-full pointer-events-none z-10"
                 viewBox={`0 0 ${btn.width} ${btn.height}`}
