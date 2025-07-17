@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 export function ActionButtonsFooter() {
-  const largeWidth = 220;
-  const largeHeight = 90;
-  const smallWidth = 180;
-  const smallHeight = 64;
-  const radius = 20;
+  const largeWidth = 200; // slightly increased width
+  const largeHeight = 64; // slightly increased height
+  const smallWidth = 160;
+  const smallHeight = 52;
+  const radius = 18; // slightly larger radius
   const stroke = 2;
 
   const buttons = [
@@ -19,7 +19,7 @@ export function ActionButtonsFooter() {
     2 * (w + h - 2 * r) + 2 * Math.PI * r;
 
   return (
-    <div className="w-full max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-6 rounded-3xl p-2 bg-[rgba(255, 255, 255, 0.78)] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,240,0.15)] backdrop-blur-md">
+    <div className="w-full max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-5 rounded-2xl p-3 bg-[rgba(240,245,255,0.2)] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,240,0.10)] backdrop-blur-md">
       {buttons.map((btn, i) => {
         const direction = i % 2 === 0 ? "reverse" : "normal";
         const delay = `${i * 0.2}s`;
@@ -27,8 +27,8 @@ export function ActionButtonsFooter() {
         const dashArray = getDashArray(btn.width, btn.height, radius);
         const sizeClass =
           btn.width === largeWidth
-            ? "lg:w-[220px] lg:h-[90px] w-[180px] h-[64px]"
-            : "w-[180px] h-[64px]";
+            ? "lg:w-[200px] lg:h-[64px] w-[160px] h-[52px]"
+            : "w-[160px] h-[52px]";
 
         return (
           <div
@@ -37,10 +37,12 @@ export function ActionButtonsFooter() {
           >
             <Link
               to="#"
-              className={`flex items-center justify-center font-orbitron font-bold uppercase rounded-2xl border border-[#00FFF0] shadow-[0_4px_32px_0_#00fff033] tracking-wide text-[1.35rem] text-white bg-[#0b1030] text-center whitespace-pre-line transition-colors duration-200 hover:bg-[#00FFF0] hover:text-[#0b1030] ${sizeClass}`}
+              className={`flex items-center justify-center font-orbitron font-semibold uppercase rounded-xl border border-[#00FFF0] shadow-[0_2px_12px_0_#00fff033] tracking-wide text-[1.08rem] text-white bg-[#0b1030] text-center whitespace-pre-line transition-colors duration-200 hover:bg-[#00FFF0] hover:text-[#0b1030] px-2 ${sizeClass}`}
               style={{ borderRadius: radius }}
             >
-              <span className="w-full whitespace-pre-line">{btn.label}</span>
+              <span className="w-full whitespace-pre-line leading-tight">
+                {btn.label}
+              </span>
               <svg
                 className="absolute top-0 left-0 w-full h-full pointer-events-none z-10"
                 viewBox={`0 0 ${btn.width} ${btn.height}`}
