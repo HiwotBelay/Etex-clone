@@ -1,22 +1,26 @@
+"use client"
 import { SiteHeader } from "./components/site-header";
 import { UploadDetailsCard } from "./components/upload-details-card";
 import { PreviewShareCard } from "./components/preview-share-card";
 import { ActionButtonsFooter } from "./components/action-buttons-footer";
 import { PhoneIcon as Whatsapp } from "lucide-react";
-// If you use react-router-dom, uncomment the next line and replace <a> with <Link to="...">
-import { Link } from "react-router-dom";
 
-export default function App() {
+
+export default function Home() {
   return (
-    <div className="min-h-screen bg-background-dark text-foreground pt-32">
-      {/* Added pt-20 for fixed header */}
+    <div className="min-h-screen bg-black text-white">
       <SiteHeader />
-      <main className="container mx-auto py-12 px-4 md:px-6 lg:grid lg:grid-cols-2 lg:gap-12">
-        <section className="mb-12 lg:mb-0">
+      <main className="container mx-auto pt-[150px] pb-12 px-0 lg:grid lg:grid-cols-2 lg:gap-12">
+        {" "}
+        {/* px-0 to remove default horizontal padding */}
+        <section className="mb-12 lg:mb-0 pl-10">
+          {" "}
+          {/* Added pl-10 for 40px from left edge */}
           <UploadDetailsCard />
         </section>
-
-        <section>
+        <section className="pr-10">
+          {" "}
+          {/* Added pr-10 to balance the right side */}
           <PreviewShareCard />
         </section>
       </main>
@@ -30,7 +34,6 @@ export default function App() {
           reCAPTCHA challenge.
         </p>
       </footer>
-
       {/* WhatsApp Chat Button */}
       <a
         href="https://wa.me/yourphonenumber"
@@ -42,5 +45,5 @@ export default function App() {
         <Whatsapp className="w-8 h-8" />
       </a>
     </div>
-  );
+  )
 }
