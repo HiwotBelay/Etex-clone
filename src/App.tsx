@@ -4,7 +4,7 @@ import { UploadDetailsCard } from "./components/upload-details-card";
 import { PreviewShareCard } from "./components/preview-share-card";
 import { ActionButtonsFooter } from "./components/action-buttons-footer";
 import { PhoneIcon as Whatsapp } from "lucide-react";
-import { Link } from "react-router-dom";
+
 
 export default function App() {
   return (
