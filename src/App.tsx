@@ -1,28 +1,27 @@
-"use client"
+"use client";
 import { SiteHeader } from "./components/site-header";
 import { UploadDetailsCard } from "./components/upload-details-card";
 import { PreviewShareCard } from "./components/preview-share-card";
 import { ActionButtonsFooter } from "./components/action-buttons-footer";
 import { PhoneIcon as Whatsapp } from "lucide-react";
+import { Link } from "react-router-dom";
 
-
-
-export default function Home() {
+export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div
+      className="min-h-screen text-foreground pt-32"
+      style={{ background: "#0B1236" }}
+    >
+      {/* Added pt-20 for fixed header */}
       <SiteHeader />
-      <main className="container mx-auto pt-[150px] pb-12 px-0 lg:grid lg:grid-cols-2 lg:gap-12">
-        {" "}
-        {/* px-0 to remove default horizontal padding */}
-        <section className="mb-12 lg:mb-0 pl-10">
-          {" "}
-          {/* Added pl-10 for 40px from left edge */}
+      <main className="container mx-auto py-12 px-4 md:px-6 lg:grid lg:grid-cols-12 lg:gap-12">
+        <section className="mb-12 lg:mb-0 lg:col-span-5">
           <UploadDetailsCard />
         </section>
-        <section className="pr-10">
-          {" "}
-          {/* Added pr-10 to balance the right side */}
-          <PreviewShareCard />
+        <section className="lg:col-span-7 flex justify-center">
+          <div className="w-full max-w-3xl">
+            <PreviewShareCard />
+          </div>
         </section>
       </main>
       {/* Action Buttons Section - now separate from footer */}
@@ -50,6 +49,7 @@ export default function Home() {
           </p>
         </div>
       </footer>
+
       {/* WhatsApp Chat Button */}
       <a
         href="https://wa.me/yourphonenumber"
@@ -61,5 +61,5 @@ export default function Home() {
         <Whatsapp className="w-8 h-8" />
       </a>
     </div>
-  )
+  );
 }

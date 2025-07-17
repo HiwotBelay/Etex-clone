@@ -30,7 +30,7 @@ export function PreviewShareCard() {
         <h2 className="text-cyan-400 text-xl font-bold mb-4">
           PLEASE COPY THE TEXT BELOW AND SHARE IT ON SOCIAL MEDIA
         </h2>
-        <div className="relative bg-[#111216] rounded-2xl px-6 pt-8 pb-16 text-left min-h-[340px] mx-auto max-w-[700px] text-white font-sans shadow-lg">
+        <div className="relative bg-[#111216] rounded-2xl px-6 pt-8 pb-16 text-left min-h-[340px] mx-auto max-w-3xl text-white font-sans shadow-lg">
           <div className="bg-[#181A20] rounded-xl px-6 py-6">
             <div className="text-[20px] font-semibold mb-6">
               I’ll be attending{" "}

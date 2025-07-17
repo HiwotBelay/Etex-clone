@@ -7,23 +7,34 @@ export function ActionButtonsFooter() {
   const stroke = 2;
 
   const buttons = [
-    { label: "REGISTER NOW", width: btnWidth, height: btnHeight },
-    { label: "EXHIBIT NOW", width: btnWidth, height: btnHeight },
-    { label: "HACKATHON", width: btnWidth, height: btnHeight },
-    { label: "WORKSHOP", width: btnWidth, height: btnHeight },
+    {
+      label: "REGISTER NOW",
+      width: btnWidth,
+      height: btnHeight,
+      animDuration: 4,
+    },
+    {
+      label: "EXHIBIT NOW",
+      width: btnWidth,
+      height: btnHeight,
+      animDuration: 5,
+    },
+    { label: "HACKATHON", width: btnWidth, height: btnHeight, animDuration: 6 },
+    { label: "WORKSHOP", width: btnWidth, height: btnHeight, animDuration: 7 },
   ];
 
   const getDashArray = (w: number, h: number, r: number) =>
     2 * (w + h - 2 * r) + 2 * Math.PI * r;
 
   return (
-    <div className="w-full max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-5 rounded-2xl p-3 bg-[rgba(240,245,255,0.2)] border border-cyan-400/30 shadow-[0_8px_32px_0_rgba(0,255,240,0.10)] backdrop-blur-md">
+    <div className="sticky top-0 z-40 w-full max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-5 rounded-2xl p-3 bg-[rgba(240,245,255,0.2)] border border-cyan-400/30 shadow-lg backdrop-blur-md">
       {buttons.map((btn, i) => {
         const direction = i % 2 === 0 ? "reverse" : "normal";
         const delay = `${i * 0.2}s`;
         const gradId = `snake-gradient-anim-${i}`;
         const dashArray = getDashArray(btn.width, btn.height, radius);
         const sizeClass = "w-[160px] h-[52px]";
+        const animDuration = btn.animDuration;
 
         return (
           <div
@@ -58,7 +69,7 @@ export function ActionButtonsFooter() {
                   rx={radius}
                   ry={radius}
                   style={{
-                    animation: `snake-move-anim 2s linear infinite`,
+                    animation: `snake-move-anim ${animDuration}s linear infinite`,
                     animationDirection: direction,
                     animationDelay: delay,
                     stroke: `url(#${gradId})`,
