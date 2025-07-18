@@ -1,50 +1,61 @@
-"use client"
 
-import type React from "react"
-import { useState } from "react"
-import image1 from "../assets/GENERATE.png" // Corrected import path based on your input
+
+import type React from "react";
+import { useState } from "react";
+import image1 from "../../assets/GENERATE.png";
+
 
 export function UploadDetailsCard() {
-  const [selectedFileName, setSelectedFileName] = useState<string>("")
-  const [userName, setUserName] = useState<string>("")
-  const [userDesignation, setUserDesignation] = useState<string>("")
-  const [userCompany, setUserCompany] = useState<string>("")
+  const [selectedFileName, setSelectedFileName] = useState<string>("");
+  const [userName, setUserName] = useState<string>("");
+  const [userDesignation, setUserDesignation] = useState<string>("");
+  const [userCompany, setUserCompany] = useState<string>("");
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
+    const file = e.target.files?.[0];
     if (file) {
-      setSelectedFileName(file.name)
+      setSelectedFileName(file.name);
     } else {
-      setSelectedFileName("")
+      setSelectedFileName("");
     }
-  }
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    // This is where you would typically use React Query/Axios to send data
+    e.preventDefault();
     console.log("Form submitted:", {
       selectedFileName,
       userName,
       userDesignation,
       userCompany,
-    })
-    // For now, just log the data. API integration will come next.
-  }
+    });
+  };
 
   return (
     <div
       className="p-0 rounded-xl border border-border-dark-grey shadow-lg flex flex-col items-center justify-start"
-      style={{ width: "484px", height: "1217px", backgroundColor: "#066475" }} // Applied background color directly
+      style={{ width: "484px", height: "1217px", backgroundColor: "#066475" }}
     >
-      <div className="border border-white rounded mx-auto p-4 mt-4" style={{ width: "449px", height: "760px" }}>
-        <h2 className="text-foreground text-xl font-bold mb-6 text-center">PLEASE UPLOAD IMAGE AND DETAILS</h2>
+      <div
+        className="border border-white rounded mx-auto p-4 mt-4"
+        style={{ width: "449px", height: "760px" }}
+      >
+        <h2 className="text-foreground text-xl font-bold mb-6 text-center">
+          PLEASE UPLOAD IMAGE AND DETAILS
+        </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-6">
-            <p className="text-foreground text-sm mb-2">Upload JPG & PNG Format Image (Max size: 3MB)</p>
+            <p className="text-foreground text-sm mb-2">
+              Upload JPG & PNG Format Image (Max size: 3MB)
+            </p>
             <div className="flex items-center space-x-2">
               <label className="cursor-pointer bg-gray-200 text-gray-800 px-4 py-2 border border-gray-300 hover:bg-gray-300 rounded text-sm font-medium">
                 Choose File
-                <input type="file" accept="image/png, image/jpeg" className="hidden" onChange={handleFileChange} />
+                <input
+                  type="file"
+                  accept="image/png, image/jpeg"
+                  className="hidden"
+                  onChange={handleFileChange}
+                />
               </label>
               <input
                 id="file-name"
@@ -81,7 +92,7 @@ export function UploadDetailsCard() {
           </div>
           <button type="submit" className="w-full flex justify-center">
             <img
-              src={image1|| "/placeholder.svg"} // Corrected usage: use the imported image variable
+              src={image1 || "/placeholder.svg"}
               alt="Generate Button"
               width={180}
               height={59}
@@ -90,13 +101,17 @@ export function UploadDetailsCard() {
           </button>
         </form>
         <div className="mt-10 text-center">
-          <h3 className="text-text-cyan text-lg font-bold mb-4">Share Your ETEX 2025 Badge</h3>
+          <h3 className="text-text-cyan text-lg font-bold mb-4">
+            Share Your ETEX 2025 Badge
+          </h3>
           <p className="text-foreground text-sm mb-4">
             {
               "Once your badge is ready, you are encouraged to post it on LinkedIn, Twitter, or Facebook using the suggested caption in this window:"
             }
           </p>
-          <p className="text-text-cyan text-sm font-bold mb-4">Please tag the official pages when sharing:</p>
+          <p className="text-text-cyan text-sm font-bold mb-4">
+            Please tag the official pages when sharing:
+          </p>
           <ul className="text-foreground text-sm list-disc list-inside space-y-1 text-left inline-block">
             <li>LinkedIn: @etex2025</li>
             <li>Twitter: @etex_ethiopia</li>
@@ -105,5 +120,5 @@ export function UploadDetailsCard() {
         </div>
       </div>
     </div>
-  )
+  );
 }
