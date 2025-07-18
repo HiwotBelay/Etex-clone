@@ -1,7 +1,7 @@
 "use client"
-import SiteHeader from "../src/layout/nav" // Updated import path
+import SiteHeader from "../src/layout/nav" 
 import UploadDetailsCard  from "./components/upload-details-card"
-import { PreviewShareCard } from "./components/preview-share-card"
+import { PreviewShareCard } from "./components/preview-share"
 import { ActionButtonsFooter } from "./components/action-buttons-footer"
 import { PhoneIcon as Whatsapp } from "lucide-react"
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query"

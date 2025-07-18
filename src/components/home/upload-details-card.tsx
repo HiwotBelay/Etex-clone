@@ -2,7 +2,7 @@
 import type React from "react"
 import { useState } from "react"
 import { useMutation } from "@tanstack/react-query"
-import api from "../API/api" // Assuming this API client is defined elsewhere
+import api from "../../API/api"
 import image1 from "../assets/GENERATE.png" // Using the imported image as per your instruction
 
 function UploadDetailsCard() {
@@ -15,7 +15,7 @@ function UploadDetailsCard() {
   const [isSuccess, setIsSuccess] = useState<boolean>(false)
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
+    const file = e.target.files?.[0];
     if (file) {
       setSelectedFile(file)
       setSelectedFileName(file.name)
@@ -23,7 +23,7 @@ function UploadDetailsCard() {
       setSelectedFile(null)
       setSelectedFileName("")
     }
-  }
+  };
 
   // useMutation hook for sending data to the API
   const mutation = useMutation({

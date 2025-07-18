@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 export function ActionButtonsFooter() {
-  const btnWidth = 160;
-  const btnHeight = 52;
+  const btnWidth = 180;
+  const btnHeight = 60;
   const radius = 18;
   const stroke = 2;
 
@@ -27,13 +27,13 @@ export function ActionButtonsFooter() {
     2 * (w + h - 2 * r) + 2 * Math.PI * r;
 
   return (
-    <div className="sticky top-0 z-40 w-full max-w-3xl mx-auto flex flex-wrap justify-center items-center gap-5 rounded-2xl p-3 bg-[rgba(240,245,255,0.2)] border border-cyan-400/30 shadow-lg backdrop-blur-md">
+    <div className="relative mb-4 w-full max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-6 rounded-2xl p-4 bg-[rgba(240,245,255,0.2)] border border-cyan-400/30 shadow-lg backdrop-blur-md">
       {buttons.map((btn, i) => {
         const direction = i % 2 === 0 ? "reverse" : "normal";
         const delay = `${i * 0.2}s`;
         const gradId = `snake-gradient-anim-${i}`;
         const dashArray = getDashArray(btn.width, btn.height, radius);
-        const sizeClass = "w-[160px] h-[52px]";
+        const sizeClass = "w-[180px] h-[60px]";
         const animDuration = btn.animDuration;
 
         return (
@@ -43,10 +43,14 @@ export function ActionButtonsFooter() {
           >
             <Link
               to="#"
-              className={`flex items-center justify-center font-orbitron font-semibold uppercase rounded-xl border border-[#00FFF0] shadow-[0_2px_12px_0_#00fff033] tracking-wide text-[1.08rem] text-white bg-[#0b1030] text-center whitespace-pre-line transition-colors duration-200 hover:bg-[#00FFF0] hover:text-[#0b1030] px-2 ${sizeClass}`}
-              style={{ borderRadius: radius }}
+              className={`flex items-center justify-center font-orbitron font-black uppercase rounded-xl border border-[#00FFF0] shadow-[0_2px_12px_0_#00fff033] tracking-widest text-[1.1rem] text-white bg-[#0b1030] text-center whitespace-nowrap transition-colors duration-200 hover:bg-[#00FFF0] hover:text-[#0b1030] px-2 ${sizeClass}`}
+              style={{
+                borderRadius: radius,
+                fontFamily: "Orbitron, sans-serif",
+                letterSpacing: "0.12em",
+              }}
             >
-              <span className="w-full whitespace-pre-line leading-tight">
+              <span className="w-full whitespace-nowrap leading-tight">
                 {btn.label}
               </span>
               <svg
