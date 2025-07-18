@@ -1,33 +1,54 @@
-
+"use client";
 
 import type React from "react";
 import { useState } from "react";
+import api from "../../API/api";
 import image1 from "../../assets/GENERATE.png";
 
-
 export function UploadDetailsCard() {
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [selectedFileName, setSelectedFileName] = useState<string>("");
   const [userName, setUserName] = useState<string>("");
   const [userDesignation, setUserDesignation] = useState<string>("");
   const [userCompany, setUserCompany] = useState<string>("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      setSelectedFile(file);
       setSelectedFileName(file.name);
     } else {
+      setSelectedFile(null);
       setSelectedFileName("");
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted:", {
-      selectedFileName,
-      userName,
-      userDesignation,
-      userCompany,
-    });
+    setLoading(true);
+    setSuccess(null);
+    setError(null);
+    try {
+      const formData = new FormData();
+      formData.append("name", userName);
+      formData.append("designation", userDesignation);
+      formData.append("company", userCompany);
+      if (selectedFile) {
+        formData.append("photo", selectedFile);
+      }
+      const response = await api.post("/api/generate-badge", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      setSuccess("Badge generated successfully!");
+      // Optionally handle response.data (e.g., badge URL)
+    } catch (err: any) {
+      setError(err?.response?.data?.message || "Failed to generate badge.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -74,6 +95,7 @@ export function UploadDetailsCard() {
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               className="w-full bg-white text-black border border-gray-300 placeholder:text-gray-500 px-3 py-2 rounded"
+              required
             />
             <input
               type="text"
@@ -81,6 +103,7 @@ export function UploadDetailsCard() {
               value={userDesignation}
               onChange={(e) => setUserDesignation(e.target.value)}
               className="w-full bg-white text-black border border-gray-300 placeholder:text-gray-500 px-3 py-2 rounded"
+              required
             />
             <input
               type="text"
@@ -88,9 +111,14 @@ export function UploadDetailsCard() {
               value={userCompany}
               onChange={(e) => setUserCompany(e.target.value)}
               className="w-full bg-white text-black border border-gray-300 placeholder:text-gray-500 px-3 py-2 rounded"
+              required
             />
           </div>
-          <button type="submit" className="w-full flex justify-center">
+          <button
+            type="submit"
+            className="w-full flex justify-center"
+            disabled={loading}
+          >
             <img
               src={image1 || "/placeholder.svg"}
               alt="Generate Button"
@@ -99,6 +127,15 @@ export function UploadDetailsCard() {
               className="object-contain"
             />
           </button>
+          {loading && (
+            <p className="text-cyan-300 text-center mt-2">
+              Generating badge...
+            </p>
+          )}
+          {success && (
+            <p className="text-green-400 text-center mt-2">{success}</p>
+          )}
+          {error && <p className="text-red-400 text-center mt-2">{error}</p>}
         </form>
         <div className="mt-10 text-center">
           <h3 className="text-text-cyan text-lg font-bold mb-4">
