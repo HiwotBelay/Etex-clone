@@ -1,14 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom" // Using react-router-dom Link
+import { Link } from "react-router-dom" 
 import { ChevronDown, Menu, X } from "lucide-react"
-import image from "../assets/navbarimage.png" // Reverted to original import path
+import image from "../assets/navbarimage.png" 
 
  function SiteHeader() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [headerClass, setHeaderClass] = useState("bg-black") // Pure black background
+  const [headerClass, setHeaderClass] = useState("bg-black") 
 
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen)
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen)
@@ -16,9 +16,9 @@ import image from "../assets/navbarimage.png" // Reverted to original import pat
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setHeaderClass("bg-black/20 backdrop-blur-sm") // Black with 20% opacity on scroll
+        setHeaderClass("bg-black/20 backdrop-blur-sm") 
       } else {
-        setHeaderClass("bg-black") // Pure black at top
+        setHeaderClass("bg-black") 
       }
     }
     window.addEventListener("scroll", handleScroll)
@@ -33,16 +33,16 @@ import image from "../assets/navbarimage.png" // Reverted to original import pat
         className={`w-full text-white py-4 pl-5 pr-6 border-b border-gray-700 fixed top-0 z-50 transition-all duration-300 
           flex flex-col md:flex-row md:items-center md:justify-between md:min-h-[120px] ${headerClass}`}
       >
-        {/* Container for Logo and Mobile Toggle - this will be a column on mobile, row on tablet/desktop */}
+        
         <div className="flex flex-col md:flex-row items-center justify-between w-full lg:w-auto">
           {/* Left Section: Single Combined Image */}
           <div className="flex items-center h-full w-full lg:w-auto">
             <Link to="/" className="w-full lg:w-auto flex-shrink-0">
               <img
-                src={image || "/placeholder.svg"} // Using the imported image variable
+                src={image} 
                 alt="ETEX Ethiopian Tech Expo 2025 Logos and Sponsors"
-                width={700} // Increased size
-                height={90} // Increased size
+                width={700}
+                height={90} 
                 className="object-contain h-full max-h-[90px] w-full lg:w-auto" // Adjusted max-h
               />
             </Link>

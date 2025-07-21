@@ -1,7 +1,9 @@
 import { Download, Linkedin, X, Facebook, Instagram } from "lucide-react";
 import { useState } from "react";
+// import API from "../../API/ap"
 
 export function PreviewShareCard() {
+  
   const [copied, setCopied] = useState(false);
   const socialMediaText = `I’ll be attending ETEX 2025 – East Africa's Largest Tech Event.\n\nJoin me in Addis Ababa from May 16–18 at the AICC to explore advancements in AI, Cybersecurity, Fintech, and Digital Transformation across the region.\n\nVisit the official website: www.etexethiopia.com\n\nFor more updates follow the below:\nLinkedIn: @etex2025\nTwitter: @etex_ethiopia\nFacebook: @etex\n\n#ETEX #ETEX2025 #DigitalEthiopia #TechForAfrica #Innovation #EthiopiaTech #DigitalTransformation`;
 
